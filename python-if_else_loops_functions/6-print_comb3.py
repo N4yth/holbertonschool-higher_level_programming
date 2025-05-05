@@ -5,7 +5,7 @@ while (i < 9):
     while (j < 10):
         if (i == 8 and j == 9):
             break
-        print(f"{i}{j}, ", end="")
+        print("{}{}, ".format(i, j), end="")
         j += 1
     i += 1
-print(f"{i - 1}{j}")
+print("{}{}".format(i - 1, j))
