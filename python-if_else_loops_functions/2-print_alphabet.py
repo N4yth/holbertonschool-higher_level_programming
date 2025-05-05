@@ -1,2 +1,4 @@
 #!/usr/bin/python3
-print(bytes(range(97, 123)).decode(), end="")
+for i in range(97,123):
+    alpha += chr(i)
+print(alpha, end="")
