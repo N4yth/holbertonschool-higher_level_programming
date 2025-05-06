@@ -10,4 +10,4 @@ elif (len(args) == 1):
 else:
     print("{} argument:".format(len(args)))
     for i in range(0, len(args)):
-        print("{} :{}".format(i + 1, args[i]))
+        print("{}: {}".format(i + 1, args[i]))
