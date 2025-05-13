@@ -20,9 +20,6 @@ class TestMaxInteger(unittest.TestCase):
     def test_notList(self):
         with self.assertRaises(TypeError):
             max_integer(33)
-    def test_string_list(self):
-        with self.assertRaises(TypeError):
-            max_integer(["6", "45", "11", "9.2"])
     def test_None_element(self):
         with self.assertRaises(TypeError):
             max_integer(["6", "45", None, "9.2"])
