@@ -8,7 +8,10 @@ this module contain a function that create a square made of '#'
 
 def print_square(size):
     """
-    Create a square of '#'
+    print a square of '#'
+    
+    Args:
+        size (int): the size of the square
     """
     if (not isinstance(size, int)):
         raise TypeError ("size must be an integer")
