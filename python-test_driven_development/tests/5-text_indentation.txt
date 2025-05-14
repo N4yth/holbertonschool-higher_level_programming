@@ -12,6 +12,7 @@ text
     >>> text_indentation("""    test    """)
     test
     >>> text_indentation(""" """)
+    >>> text_indentation("""                                                                                             """)
     >>> text_indentation(""".test""")
     .
     <BLANKLINE>
@@ -34,7 +35,7 @@ text
     test;test!test,
     >>> text_indentation("""34""")
     34
-    >>> text_indentation("""34.35:""")
+    >>> text_indentation("""34. 35:""")
     34.
     <BLANKLINE>
     35:
@@ -47,12 +48,12 @@ text
     tata?
     <BLANKLINE>
     ty
-    >>> text_indentation("""test.toto:tata?ty""")
-    test.
+    >>> text_indentation("""test  .  toto : tata  ?  ty""")
+    test  .
     <BLANKLINE>
-    toto:
+    toto :
     <BLANKLINE>
-    tata?
+    tata  ?
     <BLANKLINE>
     ty
     >>> text_indentation(""".test.""")
@@ -65,6 +66,13 @@ text
     <BLANKLINE>
     5
     >>> text_indentation(""".:?""")
+    .
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    >>> text_indentation("""   .   :   ?   """)
     .
     <BLANKLINE>
     :
