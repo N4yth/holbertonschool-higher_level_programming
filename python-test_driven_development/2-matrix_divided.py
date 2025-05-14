@@ -27,9 +27,7 @@ def matrix_divided(matrix, div):
                 raise TypeError(
                     "matrix must be a matrix "
                     "(list of lists) of integers/floats")
-            
             result = round(column / div, 2)
-                
             tmp_list.append(result)
         new_matrix.append(tmp_list)
     return (new_matrix)
