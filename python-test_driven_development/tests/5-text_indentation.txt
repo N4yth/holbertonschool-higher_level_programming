@@ -11,6 +11,9 @@ text
     test
     >>> text_indentation(""" """)
     <BLANKLINE>
+    >>> text_indentation(""" .""")
+     .
+    <BLANKLINE> 
     >>> text_indentation("""""")
     >>> text_indentation("")
     >>> text_indentation('ttoto.')
@@ -92,7 +95,15 @@ type
     Traceback (most recent call last):
         ...
     TypeError: text must be a string
+    >>> text_indentation(["""toto."""])
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
     >>> text_indentation(None)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+    >>> text_indentation(True)
     Traceback (most recent call last):
         ...
     TypeError: text must be a string
