@@ -22,6 +22,6 @@ TypeError: div must be a number
 >>> print(matrix_divided([[1, "test", 3], [4, 5, 6]], "ok"))
 Traceback (most recent call last):
     ...
-TypeError: div must be a number
->>> print(matrix_divided([[1, 2, 3], [4, 5, 6]], 1.5))
-[[0.67, 1.33, 2.0], [2.67, 3.33, 4.0]]
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>> print(matrix_divided([[1, 2, 3]], 4))
+[[0.25, 0.5, 0.75]]
