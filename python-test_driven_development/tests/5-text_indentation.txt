@@ -35,6 +35,20 @@ text
     <BLANKLINE>
     test.
     <BLANKLINE>
+    >>> text_indentation("test.test.test.")
+    test.
+    <BLANKLINE>
+    test.
+    <BLANKLINE>
+    test.
+    <BLANKLINE>
+    >>> text_indentation('test.test.test.')
+    test.
+    <BLANKLINE>
+    test.
+    <BLANKLINE>
+    test.
+    <BLANKLINE>
     >>> text_indentation("""test;test!test,""")
     test;test!test,
     >>> text_indentation("test.toto:tata?ty")
