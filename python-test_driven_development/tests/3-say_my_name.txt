@@ -13,6 +13,14 @@ text
     My name is 007 
     >>> say_my_name("00", "7")
     My name is 00 7
+    >>> say_my_name("")
+    My name is   
+    >>> say_my_name("toto", "")
+    My name is toto  
+    >>> say_my_name("", "toto")
+    My name is   toto
+    >>> say_my_name("", "")
+    My name is   
 
 int
 ----------------
