@@ -25,23 +25,25 @@ class TestMaxInteger(unittest.TestCase):
     def test_negative_positive_float(self):
         self.assertEqual(max_integer([-5, 6, -10, -11.9, 9.2]), 9.2)
 
-    def test_notList(self):
-        with self.assertRaises(TypeError):
-            max_integer(33)
+    def test_list_string(self):
+        self.assertEqual(max_integer(["6", "45", "33", "9.2"]), "9.2")
 
     def test_None_element(self):
         with self.assertRaises(TypeError):
             max_integer(["6", "45", None, "9.2"])
 
-    def test_not_list(self):
+    def test_not_list_int(self):
         with self.assertRaises(TypeError):
             max_integer(9.2)
 
-    def test_not_list(self):
+    def test_notList(self):
         with self.assertRaises(TypeError):
-            max_integer("toto")
+            max_integer(33)
 
-    def test_not_list(self):
+    def test_not_list_string(self):
+        self.assertEqual(max_integer(["toto"]), "toto")
+
+    def test_not_list_dict(self):
         with self.assertRaises(KeyError):
             max_integer({"toto": 3, "jsp": 4, "GG": 999, "legume": 0})
 
