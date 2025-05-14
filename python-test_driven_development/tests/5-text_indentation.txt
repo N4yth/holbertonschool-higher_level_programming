@@ -23,12 +23,12 @@ text
     >>> text_indentation("""ttoto.""")
     ttoto.
     <BLANKLINE>
-    >>> text_indentation("""test.test.test.""")
-    test.
+    >>> text_indentation("""test . test . test . """)
+    test .
     <BLANKLINE>
-    test.
+    test .
     <BLANKLINE>
-    test.
+    test .
     <BLANKLINE>
     >>> text_indentation("""test;test!test,""")
     test;test!test,
@@ -91,6 +91,13 @@ text
         ...
     TypeError: text_indentation() takes 1 positional argument but 2 were given
     >>> text_indentation("""...""")
+    .
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    >>> text_indentation(""" . . . """)
     .
     <BLANKLINE>
     .
