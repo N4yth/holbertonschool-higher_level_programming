@@ -72,6 +72,14 @@ text
     <BLANKLINE>
     ?
     <BLANKLINE>
+    >>> text_indentation(""".,:;?!""")
+    .
+    <BLANKLINE>
+    ,:
+    <BLANKLINE>
+    ;?
+    <BLANKLINE>
+    !
     >>> text_indentation(""".""")
     .
     <BLANKLINE>
