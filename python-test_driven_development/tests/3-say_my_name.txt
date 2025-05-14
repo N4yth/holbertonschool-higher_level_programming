@@ -11,6 +11,8 @@ text
     My name is John 
     >>> say_my_name("007")
     My name is 007 
+    >>> say_my_name("00", "7")
+    My name is 00 7
 
 int
 ----------------
@@ -34,6 +36,50 @@ int
         ...
     TypeError: first_name must be a string
 
+int negative
+----------------
+
+.. code-block:: python
+
+    >>> say_my_name("John", -12)
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+    >>> say_my_name(-12)
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+    >>> say_my_name(-12, "Smith")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+    >>> say_my_name(-12, -12)
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+float
+----------------
+
+.. code-block:: python
+
+    >>> say_my_name("John", 1.5)
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+    >>> say_my_name(1.5)
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+    >>> say_my_name(1.5, "Smith")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+    >>> say_my_name(1.5, 1.5)
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
 list
 ----------------
 
@@ -51,3 +97,29 @@ list
     Traceback (most recent call last):
         ...
     TypeError: last_name must be a string
+    >>> say_my_name(["John", "Smith"], ["John", "Smith"])
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+None
+----------------
+
+.. code-block:: python
+
+    >>> say_my_name(None)
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+    >>> say_my_name(None, "toto")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+    >>> say_my_name("toto", None)
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+    >>> say_my_name(None, None)
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
