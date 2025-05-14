@@ -9,7 +9,7 @@ text
     t
     >>> text_indentation("""test""")
     test
-    >>> text_indentation("""    test""")
+    >>> text_indentation("""    test    """)
     test
     >>> text_indentation(""" """)
     >>> text_indentation(""".test""")
