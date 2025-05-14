@@ -7,13 +7,7 @@ text
     
     >>> text_indentation("""test""")
     test
-    >>> text_indentation("test")
-    test
     >>> text_indentation(""" """)
-    <BLANKLINE>
-    >>> text_indentation(" ")
-    <BLANKLINE>
-    >>> text_indentation(' ')
     <BLANKLINE>
     >>> text_indentation(""".test""")
     .
@@ -24,25 +18,10 @@ text
     <BLANKLINE>
     <BLANKLINE>
     >>> text_indentation("""""")
-    >>> text_indentation("")
-    >>> text_indentation('ttoto.')
+    >>> text_indentation("""ttoto.""")
     ttoto.
     <BLANKLINE>
     >>> text_indentation("""test.test.test.""")
-    test.
-    <BLANKLINE>
-    test.
-    <BLANKLINE>
-    test.
-    <BLANKLINE>
-    >>> text_indentation("test.test.test.")
-    test.
-    <BLANKLINE>
-    test.
-    <BLANKLINE>
-    test.
-    <BLANKLINE>
-    >>> text_indentation('test.test.test.')
     test.
     <BLANKLINE>
     test.
@@ -58,7 +37,7 @@ text
     <BLANKLINE>
     35:
     <BLANKLINE>
-    >>> text_indentation("test.toto:tata?ty")
+    >>> text_indentation("""test.toto:tata?ty""")
     test.
     <BLANKLINE>
     toto:
@@ -149,6 +128,9 @@ type
     Traceback (most recent call last):
         ...
     TypeError: text must be a string
+    >>> text_indentation(("""test."""))
+    test.
+    <BLANKLINE>
     >>> text_indentation(["""toto."""])
     Traceback (most recent call last):
         ...
