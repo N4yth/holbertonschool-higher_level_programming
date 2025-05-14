@@ -3,7 +3,8 @@
 3
 >>> add_integer(100, -2)
 98
-
+>>> add_integer(2)
+100
 >>> add_integer(100, 75.9)
 175
 >>> add_integer(4, "School")
@@ -11,6 +12,10 @@ Traceback (most recent call last):
     ...
 TypeError: b must be an integer
 >>> add_integer(None)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+>>> add_integer([1, 2], 4)
 Traceback (most recent call last):
     ...
 TypeError: a must be an integer
