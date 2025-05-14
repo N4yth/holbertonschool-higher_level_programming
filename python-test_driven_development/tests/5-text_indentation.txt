@@ -9,8 +9,13 @@ text
     test
     >>> text_indentation("test")
     test
+    >>> text_indentation(""" """)
+    <BLANKLINE>
     >>> text_indentation("""""")
-
+    >>> text_indentation("")
+    >>> text_indentation('ttoto.')
+    ttoto.
+    <BLANKLINE>
     >>> text_indentation("""test.test.test.""")
     test.
     <BLANKLINE>
