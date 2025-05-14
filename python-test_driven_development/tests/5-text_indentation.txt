@@ -11,6 +11,10 @@ text
     test
     >>> text_indentation(""" """)
     <BLANKLINE>
+    >>> text_indentation(" ")
+    <BLANKLINE>
+    >>> text_indentation(' ')
+    <BLANKLINE>
     >>> text_indentation(""".test""")
     .
     <BLANKLINE>
@@ -50,6 +54,11 @@ text
     <BLANKLINE>
     ty
     >>> text_indentation("""test.""")
+    test.
+    <BLANKLINE>
+    >>> text_indentation(""".test.""")
+    .
+    <BLANKLINE>
     test.
     <BLANKLINE>
     >>> text_indentation("""0.5""")
@@ -104,6 +113,10 @@ type
         ...
     TypeError: text must be a string
     >>> text_indentation([1])
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+    >>> text_indentation((1))
     Traceback (most recent call last):
         ...
     TypeError: text must be a string
