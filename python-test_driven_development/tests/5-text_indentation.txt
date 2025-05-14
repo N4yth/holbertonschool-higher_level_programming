@@ -1,30 +1,63 @@
 >>> text_indentation = __import__('5-text_indentation').text_indentation
->>> text_indentation(3)
-Traceback (most recent call last):
-    ...
-TypeError: text must be a string
->>> text_indentation("""test""")
-test
->>> text_indentation("""test.toto:tata?ty""")
-test.
-<BLANKLINE>
-toto:
-<BLANKLINE>
-tata?
-<BLANKLINE>
-ty
->>> text_indentation(0.5)
-Traceback (most recent call last):
-    ...
-TypeError: text must be a string
->>> text_indentation("""0.5""")
-0.
-<BLANKLINE>
-5
->>> text_indentation(""".:?""")
-.
-<BLANKLINE>
-:
-<BLANKLINE>
-?
-<BLANKLINE>
+
+text
+----------------
+
+.. code-block:: python
+    
+    >>> text_indentation("""test""")
+    test
+    >>> text_indentation("test")
+    test
+    >>> text_indentation("""test.toto:tata?ty""")
+    test.
+    <BLANKLINE>
+    toto:
+    <BLANKLINE>
+    tata?
+    <BLANKLINE>
+    ty
+    >>> text_indentation("""test.""")
+    test.
+    <BLANKLINE>
+    >>> text_indentation("""0.5""")
+    0.
+    <BLANKLINE>
+    5
+    >>> text_indentation(""".:?""")
+    .
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    >>> text_indentation()
+    Traceback (most recent call last):
+        ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+type
+----------------
+
+.. code-block:: python
+
+    >>> text_indentation(3)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+    >>> text_indentation(0.5)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+    >>> text_indentation(-3)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+    >>> text_indentation(-0.5)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+    >>> text_indentation([1])
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
