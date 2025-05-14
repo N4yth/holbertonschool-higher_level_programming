@@ -9,6 +9,14 @@ text
     test
     >>> text_indentation("test")
     test
+    >>> text_indentation("test.toto:tata?ty")
+    test.
+    <BLANKLINE>
+    toto:
+    <BLANKLINE>
+    tata?
+    <BLANKLINE>
+    ty
     >>> text_indentation("""test.toto:tata?ty""")
     test.
     <BLANKLINE>
@@ -31,10 +39,17 @@ text
     <BLANKLINE>
     ?
     <BLANKLINE>
+    >>> text_indentation(""".""")
+    .
+    <BLANKLINE>
     >>> text_indentation()
     Traceback (most recent call last):
         ...
     TypeError: text_indentation() missing 1 required positional argument: 'text'
+    >>> text_indentation("""test""", """.test""")
+    Traceback (most recent call last):
+        ...
+    TypeError: text_indentation() takes 1 positional argument but 2 were given
 
 type
 ----------------
