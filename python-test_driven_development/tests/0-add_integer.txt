@@ -19,7 +19,6 @@ TypeError: a must be an integer
 Traceback (most recent call last):
     ...
 TypeError: a must be an integer
-175
 >>> add_integer("School", 4)
 Traceback (most recent call last):
     ...
