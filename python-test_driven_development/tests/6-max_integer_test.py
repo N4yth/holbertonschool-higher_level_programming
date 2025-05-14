@@ -25,6 +25,15 @@ class TestMaxInteger(unittest.TestCase):
     def test_negative_positive_float(self):
         self.assertEqual(max_integer([-5, 6, -10, -11.9, 9.2]), 9.2)
 
+    def test_negative_positive(self):
+        self.assertEqual(max_integer([-4, 6, -10, 5]), 6)
+
+    def test_zero(self):
+        self.assertEqual(max_integer([0]), 0)
+
+    def test_all_same(self):
+        self.assertEqual(max_integer([5, 5, 5, 5, 5, 5]), 5)
+
     def test_list_string(self):
         self.assertEqual(max_integer(["6", "45", "33", "9.2"]), "9.2")
 
