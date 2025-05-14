@@ -9,6 +9,8 @@ text
     t
     >>> text_indentation("""test""")
     test
+    >>> text_indentation("""    test""")
+    test
     >>> text_indentation(""" """)
     <BLANKLINE>
     >>> text_indentation(""".test""")
@@ -16,7 +18,7 @@ text
     <BLANKLINE>
     test
     >>> text_indentation(""" . """)
-     .
+    .
     <BLANKLINE>
     <BLANKLINE>
     >>> text_indentation("""""")
