@@ -51,6 +51,13 @@ text
     <BLANKLINE>
     >>> text_indentation("""test;test!test,""")
     test;test!test,
+    >>> text_indentation("""34""")
+    34
+    >>> text_indentation("""34.35:""")
+    34.
+    <BLANKLINE>
+    35:
+    <BLANKLINE>
     >>> text_indentation("test.toto:tata?ty")
     test.
     <BLANKLINE>
