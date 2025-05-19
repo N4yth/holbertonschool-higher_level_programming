@@ -10,13 +10,6 @@ class Square(object):
     a class that represente square
     """
     def __init__(self, size=0, position=(0, 0)):
-        """
-        __init__ methode
-
-        Args:
-            size (int): The size of the square
-            position (tuple): The position of the square
-        """
         if (not isinstance(size, int)):
             raise TypeError("size must be an integer")
         if (size < 0):
