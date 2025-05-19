@@ -16,7 +16,7 @@ class Square(object):
             raise ValueError("size must be >= 0")
         self._Square__size = size
         if (len(position) != 2):
-            raise ValueError("position must be a tuple of 2 positive integers")
+            raise TypeError ("position must be a tuple of 2 positive integers")
         self._Square__position = position
 
     @property
@@ -50,7 +50,7 @@ class Square(object):
         methode set a new position
         """
         if (len(value) != 2):
-            raise ValueError("position must be a tuple of 2 positive integers")
+            raise TypeError ("position must be a tuple of 2 positive integers")
         self._Square__position = value
 
     def area(self):
