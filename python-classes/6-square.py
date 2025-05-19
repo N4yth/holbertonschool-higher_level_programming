@@ -5,7 +5,7 @@ module that create a square class
 """
 
 
-class Square():
+class Square:
     """
     a class that represente square
     """
