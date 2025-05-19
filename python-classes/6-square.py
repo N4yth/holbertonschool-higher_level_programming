@@ -83,7 +83,7 @@ class Square(object):
                 for column in range(0, self._Square__size):
                     if (column == 0):
                         for i in range(0, self._position[0]):
-                            if self._position[1] > 0:
+                            if self._position[1] < 0:
                                 print("_", end="")
                             else:
                                 print(" ", end="")
