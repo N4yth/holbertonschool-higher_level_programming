@@ -77,7 +77,6 @@ class Rectangle():
         """
         rectangle = ""
         if (self.__height == 0 or self.__width == 0):
-            rectangle += "\n"
             return rectangle
         else:
             for row in range(0, self.__height):
