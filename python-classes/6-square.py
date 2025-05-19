@@ -39,6 +39,14 @@ class Square(object):
         """
         return self._Square__size
 
+    @size.setter
+    def size(self, value):
+        if (not isinstance(value, int)):
+            raise TypeError("size must be an integer")
+        if (value < 0):
+            raise ValueError("size must be >= 0")
+        self._Square__size = value
+    
     @property
     def position(self):
         """
@@ -46,28 +54,8 @@ class Square(object):
         """
         return self._position
 
-    @size.setter
-    def size(self, value):
-        """
-        methode to set a new size
-
-        Args:
-            value (int): The new size
-        """
-        if (not isinstance(value, int)):
-            raise TypeError("size must be an integer")
-        if (value < 0):
-            raise ValueError("size must be >= 0")
-        self._Square__size = value
-
     @position.setter
     def position(self, value):
-        """
-        methode to set a new position
-
-        Args:
-            value (tuple): The new position
-        """
         if (not isinstance(_position, tuple)):
             raise TypeError("position must be a tuple of 2 positive integers")
         if (not isinstance(_position[0], int)and not isinstance(_position[0], int)):
