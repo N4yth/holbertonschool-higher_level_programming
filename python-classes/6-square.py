@@ -79,13 +79,12 @@ class Square(object):
         if (self._Square__size == 0):
             print("")
         else:
+            for line in range (0, self._position[1]):
+                print("")
             for row in range(0, self._Square__size):
                 for column in range(0, self._Square__size):
                     if (column == 0):
                         for i in range(0, self._position[0]):
-                            if self._position[1] > 0:
-                                print("_", end="")
-                            else:
                                 print(" ", end="")
                     print("#", end="")
                 print("")
