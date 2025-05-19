@@ -10,6 +10,13 @@ class Square(object):
     a class that represente square
     """
     def __init__(self, size=0, position=(0, 0)):
+        """
+        __init__ methode
+
+        Args:
+            size (int): The size of the square
+            position (tuple): The position of the square
+        """
         if (not isinstance(size, int)):
             raise TypeError("size must be an integer")
         if (size < 0):
@@ -17,26 +24,29 @@ class Square(object):
         self._Square__size = size
         if (len(position) != 2):
             raise TypeError("position must be a tuple of 2 positive integers")
-        self._Square__position = position
+        self._position = position
 
     @property
     def size(self):
         """
-        methode that return the size
+        methode that return the actual size
         """
         return self._Square__size
 
     @property
     def position(self):
         """
-        methode that return the position
+        methode that return the actual position
         """
-        return self._Square__position
+        return self._position
 
     @size.setter
     def size(self, value):
         """
-        methode set a new size
+        methode to set a new size
+
+        Args:
+            value (int): The new size
         """
         if (not isinstance(value, int)):
             raise TypeError("size must be an integer")
@@ -47,11 +57,14 @@ class Square(object):
     @position.setter
     def position(self, value):
         """
-        methode set a new position
+        methode to set a new position
+
+        Args:
+            value (tuple): The new position
         """
         if (len(value) != 2):
             raise TypeError("position must be a tuple of 2 positive integers")
-        self._Square__position = value
+        self._position = value
 
     def area(self):
         """
@@ -61,7 +74,7 @@ class Square(object):
 
     def my_print(self):
         """
-        methode that print the square
+        methode that print the square with the position and the width
         """
         if (self._Square__size == 0):
             print("")
@@ -69,8 +82,8 @@ class Square(object):
             for row in range(0, self._Square__size):
                 for column in range(0, self._Square__size):
                     if (column == 0):
-                        for i in range(0, self._Square__position[0]):
-                            if self._Square__position[1] > 0:
+                        for i in range(0, self._position[0]):
+                            if self._position[1] > 0:
                                 print("_", end="")
                             else:
                                 print(" ", end="")
