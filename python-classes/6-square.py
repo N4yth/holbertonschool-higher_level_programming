@@ -22,12 +22,6 @@ class Square(object):
         if (size < 0):
             raise ValueError("size must be >= 0")
         self._Square__size = size
-        if (not isinstance(position, tuple)):
-            raise TypeError("position must be a tuple of 2 positive integers")
-        if (not isinstance(position[0], int)and not isinstance(position[0], int)):
-            raise TypeError("position must be a tuple of 2 positive integers")
-        if (position[0] < 0 or position[0] < 0):
-            raise TypeError("position must be a tuple of 2 positive integers")
         if (len(position) != 2):
             raise TypeError("position must be a tuple of 2 positive integers")
         self._position = position
@@ -46,7 +40,7 @@ class Square(object):
         if (value < 0):
             raise ValueError("size must be >= 0")
         self._Square__size = value
-    
+
     @property
     def position(self):
         """
@@ -56,12 +50,6 @@ class Square(object):
 
     @position.setter
     def position(self, value):
-        if (not isinstance(_position, tuple)):
-            raise TypeError("position must be a tuple of 2 positive integers")
-        if (not isinstance(_position[0], int)and not isinstance(_position[0], int)):
-            raise TypeError("position must be a tuple of 2 positive integers")
-        if (_position[0] < 0 or _position[0] < 0):
-            raise TypeError("position must be a tuple of 2 positive integers")
         if (len(_position) != 2):
             raise TypeError("position must be a tuple of 2 positive integers")
         self._position = value
@@ -79,12 +67,12 @@ class Square(object):
         if (self._Square__size == 0):
             print("")
         else:
-            for line in range (0, self._position[1]):
+            for line in range(0, self._position[1]):
                 print("")
             for row in range(0, self._Square__size):
                 for column in range(0, self._Square__size):
                     if (column == 0):
                         for i in range(0, self._position[0]):
-                                print(" ", end="")
+                            print(" ", end="")
                     print("#", end="")
                 print("")
