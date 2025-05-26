@@ -14,7 +14,7 @@ class VerboseList(list):
         try:
             super().remove(item)
         except ValueError:
-            raise ValueError
+            raise ValueError ("list.remove(x): x not in list")
 
     def pop(self, item=None):
         if item is None:
@@ -22,6 +22,6 @@ class VerboseList(list):
         print("Popped [{}] from the list.".format(self[item]))
         try:
             resu = super().pop(item)
-        except KeyError:
-            raise KeyError
+        except IndexError:
+            raise IndexError ("pop index out of range")
         
