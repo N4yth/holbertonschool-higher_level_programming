@@ -20,4 +20,8 @@ class VerboseList(list):
         if item is None:
             item = len(self) - 1
         print("Popped [{}] from the list.".format(self[item]))
-        resu = super().pop(item)
+        try:
+            resu = super().pop(item)
+        except KeyError:
+            raise KeyError
+        
