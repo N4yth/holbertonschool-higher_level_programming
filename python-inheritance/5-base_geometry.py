@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-this module have a class 
+this module have a class
 """
 
 
