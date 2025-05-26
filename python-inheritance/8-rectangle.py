@@ -1,11 +1,15 @@
 #!/usr/bin/python3
+"""
+this module have a class of Rectangle
+"""
+
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
-"""
-this module have a class of geometry
-"""
 
 
 class Rectangle(BaseGeometry):
+    """
+    this class is a child of BaseGeometry and represente Rectangle
+    """
     def __init__(self, width, height):
         self.integer_validator("Rectangle", width)
         self.__width = width
