@@ -78,3 +78,17 @@ Positive and negative integer
     [-15, -5, -1, 1, 5, 15]
     >>> print(my_list)
     [1, -1, 5, -5, -15, 15]
+
+
+>>> my_list = MyList()
+
+
+Positive and negative integer
+----------------
+
+.. code-block:: python
+
+    >>> print(my_list)
+    []
+    >>> my_list.print_sorted()
+    []
