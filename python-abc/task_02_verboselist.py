@@ -1,4 +1,4 @@
-
+#!/usr/bin/env python3
 
 class VerboseList(list):
     def append(self, item):
@@ -10,10 +10,10 @@ class VerboseList(list):
         print("Extended the list with [{}] items.".format(len(item)))
 
     def remove(self, item):
-        print("Removed [{}] from the list.".format(item))
-        try:
+        if item in self:
+            print("Removed [{}] from the list.".format(item))
             super().remove(item)
-        except ValueError:
+        else:
             raise ValueError("list.remove(x): x not in list")
 
     def pop(self, item=None):
