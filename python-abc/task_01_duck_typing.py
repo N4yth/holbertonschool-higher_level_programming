@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-this module have class 
+this module have class
 """
 
 from abc import ABC, abstractmethod
@@ -25,7 +25,7 @@ class Circle(Shape):
     this is the Circle class
     """
     def __init__(self, radius):
-        self.radius = radius
+        self.radius = abs(radius)
 
     def area(self):
         """
