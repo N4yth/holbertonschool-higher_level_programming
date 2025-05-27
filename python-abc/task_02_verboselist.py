@@ -14,9 +14,7 @@ class VerboseList(list):
             print("Removed [{}] from the list.".format(item))
             super().remove(item)
 
-    def pop(self, item=None):
-        if item is None:
-            item = len(self) - 1
-        if (len(self) >= item):
-            print("Popped [{}] from the list.".format(self[item]))
-            resu = super().pop(item)
+    def pop(self, item = -1):
+        resu = super().pop(item)
+        print("Popped [{}] from the list.".format(resu))
+        
