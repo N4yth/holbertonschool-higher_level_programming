@@ -6,11 +6,12 @@ class CountedIterator:
         self.iterator = iter(item)
 
     def get_count(self):
-        return (self.nb_item + 1)
+        return (self.nb_item)
 
     def __next__(self):
-        self.nb_item += 1
         try:
-            return (next(self.iterator))
+            res = next(self.iterator)
+            self.nb_item += 1
+            return (res)
         except IndexError:
             raise StopIteration

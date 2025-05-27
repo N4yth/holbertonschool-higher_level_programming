@@ -24,4 +24,3 @@ class VerboseList(list):
             resu = super().pop(item)
         except IndexError:
             raise IndexError ("pop index out of range")
-        
