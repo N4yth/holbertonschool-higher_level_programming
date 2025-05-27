@@ -1,11 +1,10 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """
 this module have class 
 """
 
 from abc import ABC, abstractmethod
 import math
-
 
 
 class Shape(ABC):
