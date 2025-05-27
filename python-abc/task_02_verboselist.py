@@ -14,13 +14,13 @@ class VerboseList(list):
         try:
             super().remove(item)
         except ValueError:
-            raise ValueError ("list.remove(x): x not in list")
+            raise ValueError("list.remove(x): x not in list")
 
     def pop(self, item=None):
         if item is None:
             item = len(self) - 1
-        print("Popped [{}] from the list.".format(self[item]))
         try:
+            print("Popped [{}] from the list.".format(self[item]))
             resu = super().pop(item)
         except IndexError:
-            raise IndexError ("pop index out of range")
+            raise IndexError("pop index out of range")
