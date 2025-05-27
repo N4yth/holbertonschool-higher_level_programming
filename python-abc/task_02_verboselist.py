@@ -2,12 +2,12 @@
 
 class VerboseList(list):
     def append(self, item):
-        super().append(item)
         print("Added [{}] to the list.".format(item))
+        super().append(item)
 
     def extend(self, item):
-        super().extend(item)
         print("Extended the list with [{}] items.".format(len(item)))
+        super().extend(item)
 
     def remove(self, item):
         if item in self:
@@ -17,4 +17,4 @@ class VerboseList(list):
     def pop(self, item = -1):
         resu = super().pop(item)
         print("Popped [{}] from the list.".format(resu))
-        return item
+        return resu
