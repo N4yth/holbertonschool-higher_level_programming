@@ -12,4 +12,4 @@ def load_and_deserialize(filename):
     # Your code here to load and deserialize data from the specified file
     with open(filename, 'r', encoding="UTF-8") as fichier:
         result = fichier.read()
-    return result
+    return json.loads(result)
