@@ -22,7 +22,7 @@ class Student:
         itt = 0
         if attrs:
             for i in attrs:
-                if (type(attrs[0]) is not type(attrs[itt])):
+                if (type(attrs[itt]) is not str):
                     return self.__dict__
                 itt += 1
                 if i in self.__dict__:
