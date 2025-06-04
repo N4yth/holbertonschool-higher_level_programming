@@ -21,7 +21,7 @@ class Student:
         finaldict = {}
         if attrs:
             for i in attrs:
-                if (type(i) is not str):
+                if (not isinstance(i, str)):
                     return self.__dict__
             for i in attrs:
                 if i in self.__dict__:
