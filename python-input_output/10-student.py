@@ -19,7 +19,7 @@ class Student:
         fonction that return the dictionary representation of this class
         '''
         finaldict = {}
-        if attrs:
+        if attrs and isinstance(attrs, list):
             for i in attrs:
                 if (not isinstance(i, str)):
                     return self.__dict__
