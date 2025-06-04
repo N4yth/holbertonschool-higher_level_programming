@@ -19,12 +19,11 @@ class Student:
         fonction that return the dictionary representation of this class
         '''
         finaldict = {}
-        itt = 0
         if attrs:
             for i in attrs:
-                if (type(attrs[itt]) is not str):
+                if (type(i) is not str):
                     return self.__dict__
-                itt += 1
+            for i in attrs:
                 if i in self.__dict__:
                     finaldict[i] = self.__dict__[i]
             return finaldict
