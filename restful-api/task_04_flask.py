@@ -27,9 +27,9 @@ def status():
 @app.route("/users/<string:username>")
 def usepart(username):
     if username in users:
-        return jsonify(message=users[username])
+        return jsonify(users[username])
     else:
-        return jsonify(message={"error": "User not found"}), 404
+        return jsonify({"error": "User not found"}), 404
 
 
 @app.route("/add_user", methods=['POST'])
@@ -37,9 +37,9 @@ def add_users():
     data_user = request.json
     if data_user.get("username"):
         users[data_user["username"]] = data_user
-        return jsonify(message={"message": "User added", "user": data_user}), 201
+        return jsonify({"message": "User added", "user": data_user}), 201
     else:
-        return jsonify(message={"error": "Username is required"}), 400
+        return jsonify({"error": "Username is required"}), 400
 
 
 if __name__ == "__main__":
