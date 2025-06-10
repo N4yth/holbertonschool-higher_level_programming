@@ -16,10 +16,7 @@ def home():
 
 @app.route("/data")
 def jsoni():
-    res = []
-    for key in users.keys():
-        res.append(key)
-    return jsonify(res)
+    return jsonify(list(users.keys()))
 
 
 @app.route("/status")
@@ -30,19 +27,19 @@ def status():
 @app.route("/users/<string:username>")
 def usepart(username):
     if username in users:
-        return jsonify(message=user[username])
+        return jsonify(message=users[username])
     else:
-        return jsonify(message={"error": "User not found"}), 400
+        return jsonify(message={"error": "User not found"}), 404
 
 
 @app.route("/add_user", methods=['POST'])
 def add_users():
-    data_user = request.get_json()
+    data_user = request.json
     if data_user.get("username"):
         users[data_user["username"]] = data_user
         return jsonify(message={"message": "User added", "user": data_user}), 201
     else:
-        return jsonify(message={"error": "User not found"}), 400
+        return jsonify(message={"error": "Username is required"}), 400
 
 
 if __name__ == "__main__":
