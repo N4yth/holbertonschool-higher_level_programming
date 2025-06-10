@@ -7,6 +7,7 @@ class app(BaseHTTPRequestHandler):
     def do_GET(self):
         self.send_response(200)
         self.send_header('Content-type', 'application/json')
+        self.end_headers()
         if (self.path == "/data"):
             self.wfile.write(dumps(
                 {"name": "John", "age": 30, "city": "New York"}
