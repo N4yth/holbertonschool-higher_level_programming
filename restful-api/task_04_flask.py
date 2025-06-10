@@ -42,11 +42,12 @@ def usepart(username):
 
 @app.route("/add_user", methods=['POST'])
 def add_users():
+    data_user = request.get_json()
+    print(data.get['username'])
     returnval = {"message": "User added", "user": {}}
-    if "username" in request.form.keys() and request.methode == 'POST':
-        
-        users[request.form["username"]] = request.form
-        returnval["user"] = request.form
+    if "username" in data.keys() and request.methode == 'POST':
+        users[data["username"]] = data
+        returnval["user"] = data
         return jsonify(data=returnval, status=201)
     else:
         return jsonify(data={"error": "User not found"}, status=400)
