@@ -29,28 +29,20 @@ def status():
 
 @app.route("/users/<string:username>")
 def usepart(username):
-    dict_ret = {}
     if username in users:
-        val = users[username]
-        dict_ret["username"] = username
-        for i in val:
-            dict_ret[i] = val[i]
-        return jsonify(data=dict_ret)
+        return jsonify(message=user[username])
     else:
-        return jsonify(data={"error": "User not found"}, status=400)
+        return jsonify(message={"error": "User not found"}), 400
 
 
 @app.route("/add_user", methods=['POST'])
 def add_users():
     data_user = request.get_json()
-    print(data.get['username'])
-    returnval = {"message": "User added", "user": {}}
-    if "username" in data.keys() and request.methode == 'POST':
-        users[data["username"]] = data
-        returnval["user"] = data
-        return jsonify(data=returnval, status=201)
+    if data_user.get("username"):
+        users[data_user["username"]] = data_user
+        return jsonify(message={"message": "User added", "user": data_user}), 201
     else:
-        return jsonify(data={"error": "User not found"}, status=400)
+        return jsonify(message={"error": "User not found"}), 400
 
 
 if __name__ == "__main__":
