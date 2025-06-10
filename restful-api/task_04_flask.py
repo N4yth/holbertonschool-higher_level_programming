@@ -11,7 +11,7 @@ users = {}
 
 @app.route("/")
 def home():
-    return "Welcome to Flask API!"
+    return "Welcome to the Flask API!"
 
 
 @app.route("/data")
@@ -40,12 +40,13 @@ def usepart(username):
         return jsonify(data={"error": "User not found"}, status=400)
 
 
-@app.route("/add_user", methods=['GET'])
+@app.route("/add_user", methods=['POST'])
 def add_users():
     returnval = {"message": "User added", "user": {}}
-    if "username" in request.args.keys() and request.methode == 'GET':
-        users[request.args["username"]] = request.args
-        returnval["user"] = request.args
+    if "username" in request.form.keys() and request.methode == 'POST':
+        
+        users[request.form["username"]] = request.form
+        returnval["user"] = request.form
         return jsonify(data=returnval, status=201)
     else:
         return jsonify(data={"error": "User not found"}, status=400)
