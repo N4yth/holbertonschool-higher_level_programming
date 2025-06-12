@@ -19,31 +19,16 @@ auth = HTTPBasicAuth()
 app.config["JWT_SECRET_KEY"] = "super-secret"
 
 users = {
-    "JohnDoe": {
-        "username": "JohnDoe",
-        "role": "user",
-        "password": ws.generate_password_hash("1234")
-    },
-    "TataMia": {
-        "username": "TataMia",
-        "role": "admin",
-        "password": ws.generate_password_hash("4321")
-    },
-    "EllieCoptair": {
-        "username": "EllieCoptair",
-        "role": "admin",
-        "password": ws.generate_password_hash("2143")
-    },
-    "JohnWeak": {
-        "username": "JohnWeak",
-        "role": "admin",
-        "password": ws.generate_password_hash("1432")
-    },
-    "AliceLiddell": {
-        "username": "AliceLiddell",
-        "role": "user",
-        "password": ws.generate_password_hash("2341")
-    }
+    "user1": {
+        "username": "user1",
+        "password": generate_password_hash("password"),
+        "role": "user"
+        },
+    "admin1": {
+        "username": "admin1",
+        "password": generate_password_hash("password"),
+        "role": "admin"
+        }
 }
 
 @auth.verify_password
@@ -61,11 +46,12 @@ def basic():
 
 @app.route("/login", methods=['POST'])
 def login():
-    data = request.json
-    if not data.get("username") or not data.get("password"):
+    username = request.json.get("username")
+    password = request.json.get("password")
+    if not username or not password:
         return jsonify({"message": "user or password missing"}), 400
-    if (verify_pass(data["username"], data["password"])):
-        access_token = create_access_token(identity=data["username"])
+    if (verify_pass(username, password)):
+        access_token = create_access_token(identity=username)
         return jsonify(access_token=access_token), 200
     return jsonify({"message": "wrong user or password"}), 401
 
