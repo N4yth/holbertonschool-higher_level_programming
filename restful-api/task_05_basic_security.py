@@ -86,10 +86,6 @@ def access_admin():
     return jsonify({"error": "Admin access required"}), 403
 
 
-if __name__ == "__main__":
-    app.run()
-
-
 @jwt.unauthorized_loader
 def handle_unauthorized_error(err):
     return jsonify({"error": "Missing or invalid token"}), 401
@@ -113,3 +109,7 @@ def handle_revoked_token_error(err):
 @jwt.needs_fresh_token_loader
 def handle_needs_fresh_token_error(err):
     return jsonify({"error": "Fresh token required"}), 401
+
+
+if __name__ == "__main__":
+    app.run()
