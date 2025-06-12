@@ -51,7 +51,7 @@ users = {
 @app.route("/basic-protected", methods=['GET'])
 @auth.login_required
 def basic():
-    return ("Basic Auth: Access Granted")
+    return jsonify({"message": "Basic Auth: Access Granted"}), 200
 
 
 @auth.verify_password
