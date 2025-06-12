@@ -19,28 +19,28 @@ auth = HTTPBasicAuth()
 app.config["JWT_SECRET_KEY"] = "super-secret"
 
 users = {
-    "John Doe": {
-        "username": "John Doe",
+    "JohnDoe": {
+        "username": "JohnDoe",
         "role": "user",
         "password": "1234"
     },
-    "Tata Mia": {
-        "username": "Tata Mia",
+    "TataMia": {
+        "username": "TataMia",
         "role": "admin",
         "password": "4321"
     },
-    "Ellie Coptair": {
-        "username": "Ellie Coptair",
+    "EllieCoptair": {
+        "username": "EllieCoptair",
         "role": "admin",
         "password": "2143"
     },
-    "John Weak": {
-        "username": "John Weak",
+    "JohnWeak": {
+        "username": "JohnWeak",
         "role": "admin",
         "password": "1432"
     },
-    "Alice Liddell": {
-        "username": "Alice Liddell",
+    "AliceLiddell": {
+        "username": "AliceLiddell",
         "role": "user",
         "password": "2341"
     }
@@ -59,9 +59,8 @@ def basic():
 
 @auth.verify_password
 def verify_pass(username, password):
-    for user in users:
-        if (username == users[user]["username"] and
-                ws.check_password_hash(users[user]["password"], password)):
+    if (username in users):
+        if (ws.check_password_hash(users[username]["password"], password)):
             return username
     return None
 
