@@ -71,10 +71,12 @@ def verify_pass(username, password):
 @app.route("/login", methods=['POST'])
 def login():
     data = request.json
+    if not data["username"] or not data["password"]:
+        return jsonify({"error": "user or password missing"}), 400
     if (verify_pass(data["username"], data["password"])):
         access_token = create_access_token(identity=data["username"])
         return jsonify(access_token=access_token), 200
-    return jsonify({"error": "wrong user or password"}), 400
+    return jsonify({"error": "wrong user or password"}), 401
 
 
 @app.route("/jwt-protected")
