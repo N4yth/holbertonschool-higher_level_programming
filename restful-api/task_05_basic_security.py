@@ -17,7 +17,6 @@ jwt = JWTManager(app)
 auth = HTTPBasicAuth()
 
 app.config["JWT_SECRET_KEY"] = "super-secret"
-app.config['JWT_TOKEN_LOCATION'] = {'headers', 'query_string'}
 
 users = {
     "John Doe": {
@@ -60,7 +59,6 @@ def basic():
 
 @auth.verify_password
 def verify_pass(username, password):
-    print("tot")
     for user in users:
         if (username == users[user]["username"] and
                 ws.check_password_hash(users[user]["password"], password)):
