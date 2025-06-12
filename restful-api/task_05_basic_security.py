@@ -65,7 +65,7 @@ def access_admin():
     username = get_jwt_identity()
     if (username in users):
         if (users[username]["role"] == "admin"):
-            return jsonify("Admin Access: Granted"), 200
+            return "Admin Access: Granted"
     return jsonify({"error": "Admin access required"}), 403
 
 
