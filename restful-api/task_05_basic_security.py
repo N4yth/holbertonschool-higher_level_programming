@@ -22,33 +22,30 @@ users = {
     "JohnDoe": {
         "username": "JohnDoe",
         "role": "user",
-        "password": "1234"
+        "password": ws.generate_password_hash("1234")
     },
     "TataMia": {
         "username": "TataMia",
         "role": "admin",
-        "password": "4321"
+        "password": ws.generate_password_hash("4321")
     },
     "EllieCoptair": {
         "username": "EllieCoptair",
         "role": "admin",
-        "password": "2143"
+        "password": ws.generate_password_hash("2143")
     },
     "JohnWeak": {
         "username": "JohnWeak",
         "role": "admin",
-        "password": "1432"
+        "password": ws.generate_password_hash("1432")
     },
     "AliceLiddell": {
         "username": "AliceLiddell",
         "role": "user",
-        "password": "2341"
+        "password": ws.generate_password_hash("2341")
     }
 }
 
-for user in users:
-    users[user]["password"] = ws.generate_password_hash(
-        users[user]["password"])
 
 
 @app.route("/basic-protected", methods=['GET'])
@@ -68,11 +65,11 @@ def verify_pass(username, password):
 def login():
     data = request.json
     if not data.get("username") or not data.get("password"):
-        return jsonify({"error": "user or password missing"}), 400
+        return jsonify({"message": "user or password missing"}), 400
     if (verify_pass(data["username"], data["password"])):
         access_token = create_access_token(identity=data["username"])
         return jsonify(access_token=access_token), 200
-    return jsonify({"error": "wrong user or password"}), 401
+    return jsonify({"message": "wrong user or password"}), 401
 
 
 @app.route("/jwt-protected", methods=['GET'])
