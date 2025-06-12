@@ -46,19 +46,17 @@ users = {
     }
 }
 
-
-
-@app.route("/basic-protected", methods=['GET'])
-@auth.login_required
-def basic():
-    return jsonify({"message": "Basic Auth: Access Granted"}), 200
-
-
 @auth.verify_password
 def verify_pass(username, password):
     if (username in users):
         if (ws.check_password_hash(users[username]["password"], password)):
             return username
+
+
+@app.route("/basic-protected", methods=['GET'])
+@auth.login_required
+def basic():
+    return "Basic Auth: Access Granted"
 
 
 @app.route("/login", methods=['POST'])
