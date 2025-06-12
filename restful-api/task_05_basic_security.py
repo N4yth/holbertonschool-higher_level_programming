@@ -8,7 +8,6 @@ from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
 from flask_jwt_extended import JWTManager
-import jwt as jjwt
 from flask_httpauth import HTTPBasicAuth
 
 
@@ -21,14 +20,12 @@ app.config["JWT_SECRET_KEY"] = "super-secret"
 users = {
     "user1": {
         "username": "user1",
-        "password": generate_password_hash("password"),
-        "role": "user"
-        },
+        "password": ws.generate_password_hash("password"),
+        "role": "user"},
     "admin1": {
         "username": "admin1",
-        "password": generate_password_hash("password"),
-        "role": "admin"
-        }
+        "password": ws.generate_password_hash("password"),
+        "role": "admin"}
 }
 
 @auth.verify_password
