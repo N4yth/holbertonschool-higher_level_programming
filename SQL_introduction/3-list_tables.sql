@@ -1,2 +1,2 @@
 -- show table from database
-SHOW TABLE;
+SHOW TABLES;
