@@ -5,6 +5,6 @@ CREATE TABLE IF NOT EXISTS hbtn_0d_usa.cities(
     state_id INT NOT NULL,
     name VARCHAR(256) NOT NULL,
     PRIMARY KEY (id),
-    ADD FOREIGN KEY (id) REFERENCES states(id);
-    UNIQUE (id)
+    UNIQUE (id),
+    CONSTRAINT citie_in_state FOREIGN KEY (id) REFERENCES states(id)
 );
