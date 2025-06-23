@@ -1,2 +1,2 @@
--- create a database
+-- delete a database
 DELETE DATABASE IF EXISTS hbtn_0c_0;
