@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Start link class to table in database
+"""
+Start link class to table in database
 """
 import sys
 from model_state import Base, State
@@ -8,6 +9,9 @@ from sqlalchemy import (create_engine)
 
 
 def main():
+    """
+    the fonction use to search good data
+    """
     session = sessionmaker(engine)
     session = session()
     for state in session.query(State).order_by(State.id).limit(1):
