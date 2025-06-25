@@ -14,8 +14,11 @@ def main():
     """
     session = sessionmaker(engine)
     session = session()
-    for state in session.query(State).order_by(State.id).limit(1):
+    state = session.query(State).order_by(State.id).limit(1).one()
+    if state:
         print("{}: {}".format(state.id, state.name))
+    else:
+        print("Nothing")
 
 
 if __name__ == "__main__":
