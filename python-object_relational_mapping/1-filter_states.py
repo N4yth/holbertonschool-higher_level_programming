@@ -1,10 +1,9 @@
 #!/usr/bin/python3
 """
 module with one function used to connect
-and display some data from a db
+and display certain data from db
 """
 import MySQLdb
-import sqlalchemy
 import sys
 
 
@@ -23,7 +22,7 @@ def mysqlconnect():
     )
     cirsort = db_connection.cursor()
     cirsort.execute("""SELECT * from states
-        WHERE name LIKE 'N%'
+        WHERE BINARY name LIKE 'N%'
         ORDER BY states.id ASC;""")
     listed = cirsort.fetchall()
     for element in listed:
