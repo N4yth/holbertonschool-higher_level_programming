@@ -22,8 +22,8 @@ def mysqlconnect():
     )
     cirsort = db_connection.cursor()
     cirsort.execute("""SELECT cities.id, cities.name, states.name from states
-        LEFT JOIN cities ON states.id = cities.state_id
-        ORDER BY states.id ASC;""")
+        INNER JOIN cities ON states.id = cities.state_id
+        ORDER BY cities.id ASC;""")
     listed = cirsort.fetchall()
     for element in listed:
         print(element)
