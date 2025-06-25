@@ -6,6 +6,7 @@ import sys
 from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import (create_engine)
+from sqlalchemy.orm.exc import NoResultFound
 
 
 def main():
@@ -14,10 +15,10 @@ def main():
     """
     session = sessionmaker(engine)
     session = session()
-    state = session.query(State).order_by(State.id).limit(1).one()
-    if state:
+    try:
+        state = session.query(State).order_by(State.id).limit(1).one()
         print("{}: {}".format(state.id, state.name))
-    else:
+    except NoResultFound:
         print("Nothing")
 
 
