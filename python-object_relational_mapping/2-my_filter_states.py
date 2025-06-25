@@ -23,8 +23,7 @@ def mysqlconnect():
     cirsort = db_connection.cursor()
     cirsort.execute("""SELECT * from states
         WHERE BINARY name = '{}'
-        ORDER BY states.id ASC;""".format(sys.argv[4])
-        )
+        ORDER BY states.id ASC;""".format(sys.argv[4]))
     listed = cirsort.fetchall()
     for element in listed:
         print(element)
