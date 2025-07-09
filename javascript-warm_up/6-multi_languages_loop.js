@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
-const { argv } = require('node:process');
+const list = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
 
-for (let count = 2; count <= argv.length - 1; count++) {
-  console.log(argv[count]);
-}
+list.forEach((val, index) => {
+  console.log(val);
+});
