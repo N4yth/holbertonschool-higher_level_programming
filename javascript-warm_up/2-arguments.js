@@ -9,18 +9,13 @@ const thirdv = 'Arguments found';
 let count = 0;
 
 argv.forEach(function (val, index, argv) {
-    count += 1
+  count += 1;
 });
 
-if (count == 2)
-{  
-    console.log(firstv);
-}
-else if (count == 3)
-{
-    console.log(seconv);
-}
-else
-{
-    console.log(thirdv);
+if (count === 2) {
+  console.log(firstv);
+} else if (count === 3) {
+  console.log(seconv);
+} else {
+  console.log(thirdv);
 }
