@@ -12,7 +12,6 @@ def generate_invitations(template, attendees):
     for i, element in enumerate(attendees):
         result = template
         for index, value in element.items():
-            print(index)
             if (element.get("{}".format(index))):
                 result = result.replace("{"+"{}".format(index)+"}", value)
             else:
