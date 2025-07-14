@@ -16,7 +16,7 @@ def generate_invitations(template, attendees):
                 result = result.replace("{"+"{}".format(index)+"}", value)
             else:
                 result = result.replace("{"+"{}".format(index)+"}",
-                                        "{}:N/A".format(index))
+                                        "{}: N/A".format(index))
         with open("output_{}.txt".format(i + 1),
                   'w', encoding='UTF-8') as fichier:
             fichier.write(result)
