@@ -12,7 +12,7 @@ def generate_invitations(template, attendees):
     for i, element in enumerate(attendees):
         result = template
         for index, value in element.items():
-            if (element.get(index) is None):
+            if (value is None):
                 value = "N/A"
             result = result.replace("{"+"{}".format(index)+"}", value)
         with open("output_{}.txt".format(i + 1),
