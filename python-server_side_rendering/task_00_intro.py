@@ -12,10 +12,9 @@ def generate_invitations(template, attendees):
     for i, element in enumerate(attendees):
         result = template
         for index, value in element.items():
-            if (element.get(index) is not None):
-                result = result.replace("{"+"{}".format(index)+"}", value)
-            else:
-                result = result.replace("{"+"{}".format(index)+"}", "N/A")
+            if (element.get(index) is None):
+                value = "N/A"
+            result = result.replace("{"+"{}".format(index)+"}", value)
         with open("output_{}.txt".format(i + 1),
                   'w', encoding='UTF-8') as fichier:
             fichier.write(result)
