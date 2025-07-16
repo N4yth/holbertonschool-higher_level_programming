@@ -9,9 +9,11 @@ def generate_invitations(template, attendees):
     if attendees == []:
         return "No data provided, no output files generated."
 
+    key_list = ["name", "event_title", "event_date", "event_location"]
+
     for i, element in enumerate(attendees):
         result = template
-        for key in element:
+        for key in key_list:
             value = element.get(key)
             if (value is None):
                 value = "N/A"
